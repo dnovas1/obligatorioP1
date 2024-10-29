@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Obligatorio</title>
+</head>
+<body>
+  <body>
+    <div id="contenedor">
+      <header>
+        <img id="logo" src="https://p1.develotion.com/cart.jpg" alt="logo" />
+        <nav>
+            <ul id="navPrincipal">
+                <li id="btnSeccionCompra" class="btnSeccion">
+                    <a>Compra de Productos</a>
+                </li>
+                <li id="btnSeccionListado" class="btnSeccion btnAdmin btnCliente">
+                    <a>Listado de Compras</a>
+                </li>
+                <li id="btnSeccionOfertas" class="btnSeccion btnCliente">
+                    <a>Productos en Oferta</a>
+                </li>
+                <li id="btnSeccionAprobacion" class="btnSeccion btnAdmin">
+                    <a>Aprobación de Compras</a>
+                </li>
+                <li id="btnSeccionCreacion" class="btnSeccion btnAdmin">
+                    <a>Creación de Producto</a>
+                </li>
+                <li id="btnSeccionAdministrar" class="btnSeccion btnAdmin">
+                    <a>Administrar Producto</a>
+                </li>
+                <li id="btnSeccionInforme" class="btnSeccion btnAdmin">
+                    <a>Informe de Ganancias</a>
+                </li>
+                <li id="btnSeccionRegistrarse" class="btnSeccion">
+                  <a>Registrarse</a>
+              </li>
+                <li id="btnSeccionLogin" class="btnSeccion">
+                    <a>Login</a>
+                </li>
+                <li id="btnSalir">
+                    <a>Salir</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+        <!-- FIN CABEZAL -->
+        <main>
+
+          <section id="seccionLogin" class="seccion">
+            <h2>Ingreso de usuario</h2>
+              <form action="">
+
+                <label for="txtUsuario">Usuario: </label>
+                <input type="text" id="txtUsuario">
+                
+                <!-- type password esconde el texto que se ingresa en el campo-->
+                <label for="txtContraseniaLogin">Contraseña</label>
+                <input type="password" id="txtContraseniaLogin">
+
+                <input type="button" value="Ingresar" id="btnIngresar">
+            </form>
+
+            <p id="pMensajesLogin"></p>
+          </section>  
+
+          <section id="seccionRegistrarse" class="seccion">
+              <h2>Registrarse</h2>
+              <form action="">
+                <label for="txtNombre">Nombre: </label>
+                <input type="text" id="txtNombre">
+
+                <label for="txtApellido">Apellido: </label>
+                <input type="text" id="txtApellido">
+
+                <label for="txtNombreDeUsuario">Nombre de usuario: </label>
+                <input type="text" id="txtNombreDeUsuario">
+                
+
+                <label for="txtContrasenia">Contraseña: </label>
+                <input type="text" id="txtContrasenia">
+
+                <label for="txtNumTarjeta">Ingrese numero de trajeta: </label>
+                <input type="text" id="txtNumTarjeta" placeholder="WWWW-XXXX-YYYY-ZZZZ">
+
+                <label for="txtCVC">CVC : </label>
+                <input type="text" id="txtCVC">
+
+                <input type="button" value="Registrarse" id="btnRegistrarse">
+              </form>
+              <p id="pMensajesRegistrarse"></p>
+          </section> 
+        <!--Seccion compra-->
+        <section id="seccionCompra" class="seccion">
+          <h2>Compra de Productos</h2>
+          <table border="1">
+              <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Descripcion</th>
+                      <th>Precio</th>
+                      <th>En oferta</th>
+                      <th>Imagen</th>
+                      <th>Cantidad</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody id="tablaProductos">
+                  <!-- Cargar produtcos dinamicamente -->
+              </tbody>
+          </table>
+      </section>
+      <!--Ver listado de compras -->
+      <section id="seccionListado" class="seccion">
+        <h2>Listado de Compras</h2>
+        <label for="filtroEstado">Filtrar por estado: </label>
+        <select id="filtroEstado">
+            <option value="todos">Todos</option>
+            <option value="aprobada">Aprobada</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="cancelada">Cancelada</option>
+        </select>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre del producto</th>
+                    <th>Cantidad</th>
+                    <th>Monto total</th>
+                    <th>Estado</th>
+                    <th>Botones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCompras">
+                <!--Cargar compras dinamicamente -->
+            </tbody>
+        </table>
+        <p id="totalComprasAprobadas">Total de compras aprobadas: $</p>
+        <p id="saldoDisponible">Saldo disponible: $</p>
+      </section>
+      <section id="seccionOfertas" class="seccion">
+        <h2>Productos en oferta</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>En oferta</th>
+                    <th>Imagen</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tablaProductosOferta">
+                <!-- Cargar produtcos dinamicamente -->
+            </tbody>
+        </table>
+      </section>
+      <section id="seccionCreacion" class="seccion">
+      <h2>Crear Producto</h2>
+              <form action="" id="formParaCrearProducto">
+                <label for="txtNombreProducto">Nombre producto: </label>
+                <input type="text" id="txtNombreProducto">
+
+                <label for="txtPrecio">Precio: </label>
+                <input type="text" id="txtPrecio">
+
+                <label for="txtDescripcion">Descripcion: </label>
+                <input type="text" id="txtDescripcion">
+                
+
+                <label for="txtUrlImagen">Url imagen: </label>
+                <input type="text" id="txtUrlImagen">
+
+                <label for="txtStock">Stock: </label>
+                <input type="text" id="txtStock">
+
+                <input type="button" value="Crear" id="btnCrearProducto">
+              </form>
+              <p id="pMensajesCrearProducto"></p>
+          </section> 
+          <section id="seccionAdministrar" class="seccion">
+            <h2>Administrar Producto</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>En oferta</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaAdministrarProductos">
+                    <!-- Cargar produtcos dinamicamente -->
+                </tbody>
+            </table>
+            <p id="mensajeAdministrarProductos"></p>
+
+        </section>
+        <section id="seccionInforme" class="seccion">
+          <h2>Informe de Ganancias</h2>
+          <p id="pInformeGanancias"></p>
+        </section>
+          
+
+          <hr />
+        </main>
+        <!-- FIN CONTENIDO -->
+        <footer>
+          <a href="https://www.ort.edu.uy">Footer</a>
+        </footer>
+        <!-- FIN PIE -->
+      </div>
+      <!-- FIN CONTENEDOR -->
+    <script src="js/clases.js"></script>
+    <script src="js/codigo.js"></script>
+</body>
+</html>
